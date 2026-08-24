@@ -1,0 +1,72 @@
+---
+import { siteContent } from "../content/siteContent";
+---
+
+<section class="expertise section" aria-labelledby="expertise-title">
+  <div class="site-shell expertise__heading" data-reveal>
+    <p class="section-eyebrow">{siteContent.expertise.eyebrow}</p>
+    <h2 class="section-title section-title--large" id="expertise-title">
+      {siteContent.expertise.titleLines.map((line) => (
+        <span class="section-title__line title-line">{line}</span>
+      ))}
+    </h2>
+  </div>
+
+  <div class="site-shell expertise__strengths">
+    {siteContent.expertise.strengths.map((strength) => (
+      <article class="expertise-card" data-reveal>
+        <span class="expertise-card__number numeric-text">{strength.number}</span>
+        <h3 class="expertise-card__title">{strength.title}</h3>
+        <p class="expertise-card__text">{strength.text}</p>
+      </article>
+    ))}
+  </div>
+
+  <div class="expertise__brand" data-reveal>
+    <div class="site-shell expertise__brand-inner">
+      <div class="expertise__brand-title-wrap">
+        <p class="section-eyebrow section-eyebrow--light">{siteContent.expertise.brandStory.eyebrow}</p>
+        <p class="expertise__brand-name">{siteContent.expertise.brandStory.title}</p>
+      </div>
+      <div class="expertise__brand-copy">
+        <h3 class="expertise__brand-title">{siteContent.expertise.brandStory.subtitle}</h3>
+        <p class="expertise__brand-text">{siteContent.expertise.brandStory.text}</p>
+        <a
+          class="expertise__brand-link arrow-link"
+          href="https://www.cojucrimson.com/about/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="arrow-link__label">コージュクリムゾンについて</span>
+          <span class="arrow-link__icon" aria-hidden="true">↗</span>
+          <span class="visually-hidden">（外部サイト）</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="expertise__vision">
+    <div class="site-shell expertise__vision-grid">
+      <div class="expertise__vision-heading" data-reveal>
+        <p class="section-eyebrow">{siteContent.expertise.vision.eyebrow}</p>
+        <h3 class="section-title expertise__vision-title">
+          {siteContent.expertise.vision.titleLines.map((line) => (
+            <span class="section-title__line title-line">{line}</span>
+          ))}
+        </h3>
+      </div>
+      <div class="expertise__directions" data-reveal>
+        {siteContent.expertise.vision.directions.map((direction) => (
+          <article class="expertise__direction">
+          <span class="expertise__direction-number numeric-text">{direction.number}</span>
+            <div class="expertise__direction-body">
+              <h4 class="expertise__direction-title">{direction.title}</h4>
+              <p class="expertise__direction-text">{direction.text}</p>
+            </div>
+          </article>
+        ))}
+        <p class="expertise__health-note">{siteContent.expertise.vision.healthNote}</p>
+      </div>
+    </div>
+  </div>
+</section>

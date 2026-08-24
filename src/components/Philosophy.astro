@@ -1,0 +1,30 @@
+---
+import { siteContent } from "../content/siteContent";
+---
+
+<section class="philosophy section" id="philosophy" aria-labelledby="philosophy-title">
+  <div class="philosophy__word" aria-hidden="true">COJU</div>
+  <div class="site-shell philosophy__inner">
+    <div class="philosophy__heading" data-reveal>
+      <p class="section-eyebrow section-eyebrow--light">{siteContent.philosophy.eyebrow}</p>
+      <h2 class="section-title section-title--light" id="philosophy-title">
+        {siteContent.philosophy.titleLines.map((line) => (
+          <span class="section-title__line title-line">{line}</span>
+        ))}
+      </h2>
+      <p class="philosophy__lead">{siteContent.philosophy.lead}</p>
+    </div>
+    <div class="philosophy__items" data-reveal>
+      {siteContent.philosophy.items.map((item) => (
+        <article class="philosophy__item">
+          <span class="philosophy__number numeric-text">{item.number}</span>
+          <div class="philosophy__item-body">
+            <p class="philosophy__label">{item.label}</p>
+            <h3 class="philosophy__item-title">{item.title}</h3>
+            <p class="philosophy__item-text">{item.text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

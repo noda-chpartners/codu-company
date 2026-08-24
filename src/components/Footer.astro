@@ -1,0 +1,35 @@
+---
+import { siteContent } from "../content/siteContent";
+---
+
+<footer class="site-footer">
+  <div class="site-shell site-footer__inner">
+    <div class="site-footer__cta" data-reveal>
+      <p class="site-footer__eyebrow">CONTACT</p>
+      <p class="site-footer__title">
+        <span class="site-footer__title-line title-line">事業についてのご相談は、</span>
+        <span class="site-footer__title-line title-line">お電話で承ります。</span>
+      </p>
+      <a class="site-footer__tel" href="tel:0432395498">
+        <span class="site-footer__tel-label">TEL</span>
+        <span class="site-footer__tel-number numeric-text">043-239-5498</span>
+      </a>
+    </div>
+    <div class="site-footer__bottom">
+      <a class="site-footer__brand" href="#top" aria-label="ページ上部へ戻る">
+        <span class="site-footer__brand-main">COJU</span>
+        <span class="site-footer__brand-sub">CO-EXIST, JOIN US.</span>
+      </a>
+      <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+        <ul class="site-footer__nav-list">
+          {siteContent.navigation.map((item) => (
+            <li class="site-footer__nav-item">
+              <a class="site-footer__nav-link" href={item.href}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <p class="site-footer__copyright numeric-text">© 2026 COJU CO., LTD.</p>
+    </div>
+  </div>
+</footer>

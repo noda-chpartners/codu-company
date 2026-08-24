@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "../assets/images/hero-tea.png";
+import { siteContent } from "../content/siteContent";
+---
+
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero__image-wrap" aria-hidden="true">
+    <Image
+      class="hero__image"
+      src={heroImage}
+      alt=""
+      widths={[640, 960, 1280, 1536]}
+      sizes="100vw"
+      format="webp"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero__veil"></div>
+  </div>
+  <div class="hero__content site-shell">
+    <p class="hero__eyebrow">{siteContent.hero.eyebrow}</p>
+    <h1 class="hero__title" id="hero-title">
+      {siteContent.hero.titleLines.map((line) => (
+        <span class="hero__title-line title-line">{line}</span>
+      ))}
+    </h1>
+    <p class="hero__lead">{siteContent.hero.lead}</p>
+    <a class="hero__link line-link" href="#about">
+      <span class="line-link__label">私たちについて</span>
+      <span class="line-link__line" aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="hero__meta" aria-hidden="true">
+    <span class="hero__meta-text">ISEHARA / KANAGAWA</span>
+    <span class="hero__meta-number numeric-text">2011—</span>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span class="hero__scroll-label">SCROLL</span>
+    <span class="hero__scroll-line"></span>
+  </div>
+</section>

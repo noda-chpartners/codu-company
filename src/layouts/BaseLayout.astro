@@ -1,0 +1,66 @@
+---
+import "../styles/global.css";
+import { siteContent } from "../content/siteContent";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = siteContent.site.title,
+  description = siteContent.site.description,
+} = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, siteContent.site.canonicalUrl);
+const ogImageUrl = new URL("/ogp.png", siteContent.site.canonicalUrl);
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteContent.site.name,
+  url: siteContent.site.canonicalUrl,
+  logo: new URL("/favicon.svg", siteContent.site.canonicalUrl).toString(),
+  founder: {
+    "@type": "Person",
+    name: "速石 敏雄",
+  },
+  foundingDate: "2011-02-04",
+  address: {
+    "@type": "PostalAddress",
+    addressCountry: "JP",
+    addressRegion: "神奈川県",
+    addressLocality: "伊勢原市",
+    streetAddress: "高森台1丁目14番4号",
+  },
+  telephone: "043-239-5498",
+};
+---
+
+<!doctype html>
+<html lang="ja" class="site-root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#731b2b" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content={siteContent.site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content="深紅のお茶とドライフルーツを配したコージュ株式会社のイメージ" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <title>{title}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  </head>
+  <body class="site-body">
+    <slot />
+  </body>
+</html>

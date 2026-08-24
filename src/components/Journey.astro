@@ -1,0 +1,70 @@
+---
+import { siteContent } from "../content/siteContent";
+---
+
+<section class="journey section" aria-labelledby="journey-title">
+  <div class="site-shell journey__heading" data-reveal>
+    <div class="journey__heading-main">
+      <p class="section-eyebrow">{siteContent.journey.eyebrow}</p>
+      <h2 class="section-title section-title--large" id="journey-title">
+        {siteContent.journey.titleLines.map((line) => (
+          <span class="section-title__line title-line">{line}</span>
+        ))}
+      </h2>
+    </div>
+    <p class="journey__introduction">{siteContent.journey.introduction}</p>
+  </div>
+
+  <div class="site-shell journey__chapters">
+    {siteContent.journey.chapters.map((chapter) => (
+      <article class="journey__chapter" data-reveal>
+        <div class="journey__chapter-meta">
+          <span class="journey__chapter-number numeric-text">{chapter.number}</span>
+          <span class="journey__chapter-period">{chapter.period}</span>
+        </div>
+        <h3 class="journey__chapter-title">{chapter.title}</h3>
+        <div class="journey__chapter-copy">
+          {chapter.paragraphs.map((paragraph) => (
+            <p class="journey__chapter-paragraph">{paragraph}</p>
+          ))}
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <div class="site-shell journey__achievement-wrap" data-reveal>
+    <div class="journey__achievement">
+      <p class="journey__achievement-label">{siteContent.journey.achievement.label}</p>
+      <div class="journey__achievement-flow">
+        <strong class="journey__achievement-value">{siteContent.journey.achievement.before}</strong>
+        <span class="journey__achievement-arrow" aria-hidden="true">→</span>
+        <strong class="journey__achievement-value journey__achievement-value--accent">{siteContent.journey.achievement.after}</strong>
+      </div>
+      <div class="journey__achievement-detail">
+        <span class="journey__achievement-period numeric-text">{siteContent.journey.achievement.period}</span>
+        <span class="journey__achievement-note">{siteContent.journey.achievement.note}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-shell journey__origin-wrap" data-reveal>
+    <div class="journey__origin">
+      <div class="journey__origin-title-wrap">
+        <p class="journey__origin-eyebrow">THE MEANING OF</p>
+        <h3 class="journey__origin-title">Coju<span class="journey__origin-dot">.</span></h3>
+      </div>
+      <div class="journey__origin-content">
+        <p class="journey__origin-heading">{siteContent.journey.nameOrigin.title}</p>
+        <dl class="journey__origin-list">
+          {siteContent.journey.nameOrigin.parts.map((part) => (
+            <div class="journey__origin-row">
+              <dt class="journey__origin-mark">{part.mark}</dt>
+              <dd class="journey__origin-meaning">{part.meaning}</dd>
+            </div>
+          ))}
+        </dl>
+        <p class="journey__origin-text">{siteContent.journey.nameOrigin.text}</p>
+      </div>
+    </div>
+  </div>
+</section>

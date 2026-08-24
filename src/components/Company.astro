@@ -1,0 +1,28 @@
+---
+import { siteContent } from "../content/siteContent";
+---
+
+<section class="company section" id="company" aria-labelledby="company-title">
+  <div class="site-shell company__grid">
+    <div class="company__heading" data-reveal>
+      <p class="section-eyebrow">{siteContent.company.eyebrow}</p>
+      <h2 class="section-title" id="company-title">
+        <span class="section-title__line title-line">{siteContent.company.title}</span>
+      </h2>
+    </div>
+    <dl class="company__list" data-reveal>
+      {siteContent.company.details.map((item) => (
+        <div class="company__row">
+          <dt class="company__term">{item.label}</dt>
+          <dd class:list={["company__description", { "numeric-text": ["設立", "資本金", "TEL", "FAX"].includes(item.label) }]}>
+            {"href" in item ? (
+              <a class="company__link" href={item.href}>{item.value}</a>
+            ) : (
+              item.value
+            )}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

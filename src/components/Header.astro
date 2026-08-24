@@ -1,0 +1,80 @@
+---
+import { siteContent } from "../content/siteContent";
+---
+
+<header class="site-header" data-header>
+  <a class="site-header__brand" href="#top" aria-label="コージュ株式会社 トップへ">
+    <span class="site-header__brand-main">COJU</span>
+    <span class="site-header__brand-sub">CO., LTD.</span>
+  </a>
+
+  <nav class="desktop-nav" aria-label="メインナビゲーション">
+    <ul class="desktop-nav__list">
+      {siteContent.navigation.map((item) => (
+        <li class="desktop-nav__item">
+          <a class="desktop-nav__link" href={item.href}>{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+
+  <button
+    class="menu-button"
+    type="button"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+    aria-label="メニューを開く"
+    data-menu-button
+  >
+    <span class="menu-button__line"></span>
+    <span class="menu-button__line"></span>
+    <span class="menu-button__label">MENU</span>
+  </button>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-mobile-menu>
+    <div class="mobile-menu__inner">
+      <p class="mobile-menu__eyebrow">NAVIGATION</p>
+      <nav class="mobile-menu__nav" aria-label="モバイルナビゲーション">
+        <ul class="mobile-menu__list">
+          {siteContent.navigation.map((item, index) => (
+            <li class="mobile-menu__item">
+              <a class="mobile-menu__link" href={item.href} data-menu-link>
+                <span class="mobile-menu__number numeric-text">0{index + 1}</span>
+                <span class="mobile-menu__text">{item.label}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <div class="mobile-menu__footer">
+        <span class="mobile-menu__company">コージュ株式会社</span>
+        <a class="mobile-menu__tel" href="tel:0432395498">043-239-5498</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector("[data-menu-button]");
+  const menu = document.querySelector("[data-mobile-menu]");
+  const links = document.querySelectorAll("[data-menu-link]");
+
+  const setMenuState = (isOpen: boolean) => {
+    if (!(button instanceof HTMLButtonElement) || !(menu instanceof HTMLElement)) return;
+    button.setAttribute("aria-expanded", String(isOpen));
+    button.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
+    menu.setAttribute("aria-hidden", String(!isOpen));
+    document.body.classList.toggle("is-menu-open", isOpen);
+  };
+
+  button?.addEventListener("click", () => {
+    const isOpen = button.getAttribute("aria-expanded") !== "true";
+    setMenuState(isOpen);
+  });
+
+  links.forEach((link) => link.addEventListener("click", () => setMenuState(false)));
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuState(false);
+  });
+</script>

@@ -1,0 +1,28 @@
+---
+import { siteContent } from "../content/siteContent";
+---
+
+<section class="profile section" id="profile" aria-labelledby="profile-title">
+  <div class="site-shell profile__grid">
+    <div class="profile__identity" data-reveal>
+      <p class="section-eyebrow">{siteContent.profile.eyebrow}</p>
+      <p class="profile__role">{siteContent.profile.role}</p>
+      <h2 class="profile__name" id="profile-title">
+        <span class="profile__name-line title-line">{siteContent.profile.name}</span>
+      </h2>
+      <p class="profile__name-en">TOSHIO HAYAISHI</p>
+      <p class="profile__summary">{siteContent.profile.summary}</p>
+    </div>
+    <div class="profile__history" data-reveal>
+      <p class="profile__history-label">CAREER</p>
+      <ol class="profile__history-list">
+        {siteContent.profile.history.map((item) => (
+          <li class="profile__history-item">
+            <span class="profile__history-year numeric-text">{item.year}</span>
+            <span class="profile__history-detail">{item.detail}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

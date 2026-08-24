@@ -1,0 +1,68 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "../assets/images/hero-tea.png";
+import spaceImage from "../assets/images/space-tea-salon.png";
+import wholesaleImage from "../assets/images/gift-selection.png";
+import consultingImage from "../assets/images/consulting-team.png";
+import { siteContent } from "../content/siteContent";
+
+const images = {
+  space: spaceImage,
+  retail: heroImage,
+  wholesale: wholesaleImage,
+  consulting: consultingImage,
+};
+---
+
+<section class="business section" id="business" aria-labelledby="business-title">
+  <div class="site-shell business__heading" data-reveal>
+    <p class="section-eyebrow">OUR BUSINESS</p>
+    <h2 class="section-title section-title--large" id="business-title">
+      <span class="section-title__line title-line">事業で広げる、</span>
+      <span class="section-title__line title-line">喜びの循環。</span>
+    </h2>
+  </div>
+
+  <div class="business__list">
+    {siteContent.businesses.map((business, index) => (
+      <article class:list={["business-card", { "business-card--reverse": index % 2 === 1 }]}>
+        <div class="business-card__image-wrap" data-reveal>
+          <Image
+            class="business-card__image"
+            src={images[business.imageKey]}
+            alt={`${business.titleLines.join("・")}を表すコンセプトイメージ`}
+            widths={[480, 720, 960, 1280]}
+            sizes="(max-width: 860px) 100vw, 55vw"
+            format="webp"
+            loading="lazy"
+          />
+          <span class="business-card__image-label">CONCEPT IMAGE</span>
+        </div>
+        <div class="business-card__content" data-reveal>
+          <div class="business-card__meta">
+            <span class="business-card__number numeric-text">{business.number}</span>
+            <span class="business-card__category">{business.category}</span>
+          </div>
+          <h3 class="business-card__title">
+            {business.titleLines.map((line) => (
+              <span class="business-card__title-line title-line">{line}</span>
+            ))}
+          </h3>
+          <p class="business-card__description">{business.description}</p>
+          {business.href && business.linkLabel && (
+            <a
+              class="business-card__link arrow-link"
+              href={business.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="arrow-link__label">{business.linkLabel}</span>
+              <span class="arrow-link__icon" aria-hidden="true">↗</span>
+              <span class="visually-hidden">（外部サイト）</span>
+            </a>
+          )}
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
