@@ -1,4 +1,5 @@
 ---
+import BrandIcon from "./BrandIcon.astro";
 import { siteContent } from "../content/siteContent";
 ---
 
@@ -37,8 +38,8 @@ import { siteContent } from "../content/siteContent";
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <BrandIcon className="site-footer__social-icon" name={item.icon} />
                 <span class="site-footer__social-label">{item.label}</span>
-                <span class="site-footer__social-icon" aria-hidden="true">↗</span>
                 <span class="visually-hidden">（外部サイト）</span>
               </a>
             </li>

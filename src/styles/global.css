@@ -70,6 +70,17 @@
   font-variant-numeric: lining-nums tabular-nums;
 }
 
+.brand-icon {
+  display: block;
+  flex: 0 0 auto;
+  height: 1em;
+  width: 1em;
+}
+
+.brand-icon__path {
+  fill: currentColor;
+}
+
 .section-eyebrow {
   color: var(--color-crimson);
   font-size: 0.69rem;

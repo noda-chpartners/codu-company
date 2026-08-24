@@ -14,8 +14,8 @@ export const siteContent = {
     { label: "会社概要", href: "#company" },
   ],
   socials: [
-    { label: "Instagram", href: "https://www.instagram.com/cojucrimson/" },
-    { label: "Facebook", href: "https://www.facebook.com/cojucrimson/" },
+    { label: "Instagram", href: "https://www.instagram.com/cojucrimson/", icon: "instagram" },
+    { label: "Facebook", href: "https://www.facebook.com/cojucrimson/", icon: "facebook" },
   ],
   hero: {
     eyebrow: "CO-EXIST, JOIN US.",

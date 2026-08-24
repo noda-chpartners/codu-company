@@ -1,0 +1,25 @@
+---
+import { siFacebook, siInstagram } from "simple-icons";
+
+const icons = {
+  facebook: siFacebook,
+  instagram: siInstagram,
+} as const;
+
+interface Props {
+  name: keyof typeof icons;
+  className?: string;
+}
+
+const { name, className } = Astro.props;
+const icon = icons[name];
+---
+
+<svg
+  class:list={["brand-icon", className]}
+  viewBox="0 0 24 24"
+  aria-hidden="true"
+  focusable="false"
+>
+  <path class="brand-icon__path" d={icon.path}></path>
+</svg>
