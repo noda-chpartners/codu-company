@@ -83,7 +83,9 @@
 
 .desktop-nav__list,
 .mobile-menu__list,
+.mobile-menu__social-list,
 .site-footer__nav-list,
+.site-footer__social-list,
 .profile__history-list {
   list-style: none;
   margin: 0;
@@ -239,10 +241,16 @@
 }
 
 .mobile-menu__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 24px;
+}
+
+.mobile-menu__contact {
   align-items: flex-end;
   display: flex;
   justify-content: space-between;
-  padding-top: 24px;
 }
 
 .mobile-menu__company {
@@ -255,6 +263,26 @@
   font-size: 0.74rem;
   letter-spacing: 0.08em;
   text-decoration: none;
+}
+
+.mobile-menu__social-list {
+  display: flex;
+  gap: 24px;
+}
+
+.mobile-menu__social-link {
+  align-items: center;
+  color: var(--color-ink);
+  display: inline-flex;
+  font-size: 0.67rem;
+  font-weight: 700;
+  gap: 8px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.mobile-menu__social-icon {
+  color: var(--color-crimson);
 }
 
 .hero {
@@ -1198,10 +1226,42 @@
   grid-template-columns: repeat(2, auto);
 }
 
+.site-footer__nav {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
 .site-footer__nav-link {
   color: rgba(255, 255, 255, 0.75);
   font-size: 0.68rem;
   text-decoration: none;
+}
+
+.site-footer__social-list {
+  display: flex;
+  gap: 24px;
+}
+
+.site-footer__social-link {
+  align-items: center;
+  color: var(--color-ivory);
+  display: inline-flex;
+  font-size: 0.7rem;
+  font-weight: 700;
+  gap: 9px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.site-footer__social-icon {
+  color: #d6b987;
+  transition: transform 220ms ease;
+}
+
+.site-footer__social-link:hover .site-footer__social-icon {
+  transform: translate(3px, -3px);
 }
 
 .site-footer__copyright {
@@ -1514,6 +1574,10 @@
     grid-template-columns: 1fr;
   }
 
+  .site-footer__nav {
+    align-items: flex-start;
+  }
+
   .site-footer__copyright {
     grid-column: 1;
   }
@@ -1590,6 +1654,7 @@
   }
 
   .mobile-menu__inner {
+    padding-bottom: 24px;
     padding-top: 82px;
   }
 
@@ -1598,7 +1663,7 @@
   }
 
   .mobile-menu__link {
-    padding-block: 10px;
+    padding-block: 7px;
   }
 
   .mobile-menu__text {
@@ -1606,6 +1671,7 @@
   }
 
   .mobile-menu__footer {
+    gap: 10px;
     padding-top: 13px;
   }
 }

@@ -47,8 +47,28 @@ import { siteContent } from "../content/siteContent";
         </ul>
       </nav>
       <div class="mobile-menu__footer">
-        <span class="mobile-menu__company">コージュ株式会社</span>
-        <a class="mobile-menu__tel" href="tel:0432395498">043-239-5498</a>
+        <div class="mobile-menu__contact">
+          <span class="mobile-menu__company">コージュ株式会社</span>
+          <a class="mobile-menu__tel numeric-text" href="tel:0432395498">043-239-5498</a>
+        </div>
+        <nav class="mobile-menu__social" aria-label="ソーシャルメディア">
+          <ul class="mobile-menu__social-list">
+            {siteContent.socials.map((item) => (
+              <li class="mobile-menu__social-item">
+                <a
+                  class="mobile-menu__social-link"
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="mobile-menu__social-label">{item.label}</span>
+                  <span class="mobile-menu__social-icon" aria-hidden="true">↗</span>
+                  <span class="visually-hidden">（外部サイト）</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </div>
   </div>

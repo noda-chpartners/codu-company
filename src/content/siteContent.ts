@@ -13,6 +13,10 @@ export const siteContent = {
     { label: "代表プロフィール", href: "#profile" },
     { label: "会社概要", href: "#company" },
   ],
+  socials: [
+    { label: "Instagram", href: "https://www.instagram.com/cojucrimson/" },
+    { label: "Facebook", href: "https://www.facebook.com/cojucrimson/" },
+  ],
   hero: {
     eyebrow: "CO-EXIST, JOIN US.",
     titleLines: ["共に在り、", "喜びを、次へ。"],
