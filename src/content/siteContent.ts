@@ -226,11 +226,11 @@ export const siteContent = {
     details: [
       { label: "社名", value: "コージュ株式会社" },
       { label: "代表者", value: "代表取締役　速石敏雄" },
-      { label: "本社所在地", value: "神奈川県伊勢原市高森台1丁目14番4号" },
+      { label: "本社所在地", value: "〒259-1322　神奈川県秦野市渋沢2丁目21-2" },
       { label: "設立", value: "平成23年2月4日（立春）" },
       { label: "資本金", value: "800万円" },
-      { label: "TEL", value: "043-239-5498", href: "tel:0432395498" },
-      { label: "FAX", value: "043-239-5433" },
+      { label: "TEL", value: "0463-74-5991", href: "tel:0463745991" },
+      { label: "FAX", value: "0463-74-5996" },
     ],
   },
 } as const;
