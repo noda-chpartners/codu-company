@@ -94,6 +94,10 @@
   color: #d6b987;
 }
 
+.section-eyebrow--brand {
+  text-transform: none;
+}
+
 .section-title {
   font-family: var(--font-serif);
   font-size: clamp(2.35rem, 4vw, 4.75rem);

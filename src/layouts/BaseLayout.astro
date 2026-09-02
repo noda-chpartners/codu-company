@@ -17,6 +17,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: siteContent.site.name,
+  alternateName: siteContent.site.englishName,
   url: siteContent.site.canonicalUrl,
   logo: new URL("/favicon.svg", siteContent.site.canonicalUrl).toString(),
   founder: {

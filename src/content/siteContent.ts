@@ -1,7 +1,7 @@
 export const siteContent = {
   site: {
     name: "コージュ株式会社",
-    englishName: "COJU CO., LTD.",
+    englishName: "Coju Co., Ltd.",
     title: "コージュ株式会社｜お茶から広がる、空間・商品・人づくり",
     description:
       "コージュ株式会社の公式紹介サイト。お茶とドライフルーツの販売、生産現場の技術改善、人と組織のコーチングを通じて、会社と人の前進を支えます。",
@@ -24,7 +24,7 @@ export const siteContent = {
       "お茶とドライフルーツから、空間、商品、人の成長へ。暮らしと仕事の豊かさを、事業のかたちにして届けます。",
   },
   about: {
-    eyebrow: "ABOUT COJU",
+    eyebrow: "ABOUT Coju",
     titleLines: ["人と自然のあいだに、", "豊かな時間をつくる。"],
     paragraphs: [
       "コージュの名には、「Co-exist, Join us」という想いが重なっています。人、もの、自然が無理なくつながり、それぞれの喜びが次の喜びへ広がっていくことを大切にしています。",
@@ -64,7 +64,7 @@ export const siteContent = {
       titleLines: ["空間事業"],
       description:
         "実店舗で、お茶とドライフルーツをベースにした飲食と物販を展開。自然環境を感じながら、ゆとりと豊かさに触れられる場を構想し、お客様の喜びが自然な口コミとして広がる空間づくりを目指します。",
-      linkLabel: "コージュクリムゾンについて",
+      linkLabel: "CojuCrimsonについて",
       href: "http://www.cojucrimson.com/",
       imageKey: "space",
     },
@@ -140,7 +140,7 @@ export const siteContent = {
       },
       {
         number: "03",
-        period: "COJU CORPORATION",
+        period: "Coju Corporation",
         title: "経験を、誰かの前進する力へ。",
         paragraphs: [
           "苦しい経験があったからこそ、人や会社が抱える問題や悩みの解決に役立ちたい。その想いから、コージュ株式会社を設立しました。大企業の大規模な設計・生産現場と、小規模企業、NPO、就労継続支援B型事業所などを支援してきた両方の経験を強みとしています。",
@@ -187,7 +187,7 @@ export const siteContent = {
     ],
     brandStory: {
       eyebrow: "BRAND STORY",
-      title: "Coju Crimson",
+      title: "CojuCrimson",
       subtitle: "紅茶の深い赤と、Cojuの想いを重ねて。",
       text: "真紅を意味する「Crimson Red」と、コージュ株式会社の「Coju」を重ねた紅茶専門店の屋号です。長い歴史を持つA.F.JONESの紅茶や、素材と製法にこだわるドライフルーツを通して、安らぎと豊かな時間を届けます。",
     },
