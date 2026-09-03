@@ -190,7 +190,7 @@ export const siteContent = {
       eyebrow: "BRAND STORY",
       title: "CojuCrimson",
       subtitle: "紅茶の深い赤と、Cojuの想いを重ねて。",
-      text: "真紅を意味する「Crimson Red」と、コージュ株式会社の「Coju」を重ねた紅茶専門店の屋号です。長い歴史を持つA.F.JONESの紅茶や、素材と製法にこだわるドライフルーツを通して、安らぎと豊かな時間を届けます。",
+      text: "「真紅」を意味する「Crimson Red」と、コージュ株式会社の「Coju」を重ねた紅茶専門店の屋号です。長い歴史を持つA.F.JONESの紅茶や、素材と製法にこだわるドライフルーツを通して、安らぎと豊かな時間を届けます。",
     },
     vision: {
       eyebrow: "FUTURE VISION",
