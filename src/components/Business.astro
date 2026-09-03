@@ -21,11 +21,26 @@ const images = {
       <span class="section-title__line title-line">事業で広げる、</span>
       <span class="section-title__line title-line">喜びの循環。</span>
     </h2>
+    <nav class="business__index" aria-label="各事業へ移動">
+      <ul class="business__index-list">
+        {siteContent.businesses.map((business) => (
+          <li class="business__index-item">
+            <a class="business__index-link" href={`#business-${business.imageKey}`}>
+              <span class="business__index-number numeric-text">{business.number}</span>
+              <span class="business__index-label">{business.titleLines.join("・")}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   </div>
 
   <div class="business__list">
     {siteContent.businesses.map((business, index) => (
-      <article class:list={["business-card", { "business-card--reverse": index % 2 === 1 }]}>
+      <article
+        class:list={["business-card", { "business-card--reverse": index % 2 === 1 }]}
+        id={`business-${business.imageKey}`}
+      >
         <div class="business-card__image-wrap" data-reveal>
           <Image
             class="business-card__image"
